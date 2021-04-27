@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @reservation.last_name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @reservation.first_name %>
+</p>
+
+<p>
+  <strong>Table num:</strong>
+  <%= @reservation.table_num %>
+</p>
+
+<p>
+  <strong>Time until:</strong>
+  <%= @reservation.time_until %>
+</p>
+
+<%= link_to 'Edit', edit_reservation_path(@reservation),class:"btn btn-secondary" %> 
+<%= link_to 'Back', reservations_path,class:"btn btn-secondary" %>

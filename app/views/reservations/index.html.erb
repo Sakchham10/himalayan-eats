@@ -1,0 +1,32 @@
+
+<h1>Reservations</h1>
+
+<table class= "table table-striped table-bordered">
+  <thead class ="thead">
+    <tr>
+      <th>Last name</th>
+      <th>First name</th>
+      <th>Table num</th>
+      <th>Time until</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= reservation.last_name %></td>
+        <td><%= reservation.first_name %></td>
+        <td><%= reservation.table_num %></td>
+        <td><%= reservation.time_until %></td>
+        <td><%= link_to 'Detail', reservation,class:"btn btn-secondary" %></td>
+        <td><%= link_to 'Edit', edit_reservation_path(reservation),class:"btn btn-secondary" %></td>
+        <td><%= link_to 'Cancel', reservation, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-secondary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reservation', new_reservation_path,class:"btn btn-secondary" %>
